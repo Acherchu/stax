@@ -1,0 +1,55 @@
+LAVA ESCAPE - MAP MUSIC CREDITS
+
+Every song is by a real composer and was downloaded from OpenGameArt.org (September 2026).
+The files are used unchanged, under the licence shown for each one.
+
+CC0 (public domain - no credit required, thanks anyway):
+  01 Magma Spiral       "Fire Level" (Danish Mega Pony v.4 OST) - Spring Spring
+                        https://opengameart.org/content/fire-level
+  02 Castle Keep        "Castle Stage" - MintoDog
+                        https://opengameart.org/content/castle-stage
+  03 Jungle Canopy      "Jungle Battle Loop" - omfgdude
+                        https://opengameart.org/content/jungle-battle-loop
+  04 Crumbling Ruins    "Unexplored Expansion" - Bo Jingles, from "Unexplored" by TAD (both CC0)
+                        https://opengameart.org/content/unexplored-expansion
+                        https://opengameart.org/content/unexplored-short-ver-orchestra-music
+  05 Candy Land         "Candy Day" - haruta
+                        https://opengameart.org/content/candy-day
+  06 Frozen Peak        "Fields of Ice" - Jonathan So
+                        https://opengameart.org/content/fields-of-ice
+  07 Clock Tower        "Clocktower / Clockwise / Clockwork / Time Passing / Loop" - KiluaBoy
+                        https://opengameart.org/content/clocktower-clockwise-clockwork-time-passing-loop
+  09 Neon City          "Midnight Drive" - congusbongus
+                        https://opengameart.org/content/midnight-drive
+  11 Sky Islands        "Up in the Sky" - You're Perfect Studio (Memoraphile) - used under its CC0 option
+                        https://opengameart.org/content/up-in-the-sky
+  15 Haunted Graveyard  "8-bit Haunted House Theme" - Wolfgang_
+                        https://opengameart.org/content/8-bit-haunted-house-theme
+  16 Toy Box            "Toy Soldiers" - Zane Little Music
+                        https://opengameart.org/content/toy-soldiers
+  17 Crystal Caves      "Crystal Cave (song18)" - cynicmusic (cynicmusic.com pixelsphere.org)
+                        https://opengameart.org/content/crystal-cave-song18
+  20 The Final Ascent   "Battle Theme A" - cynicmusic (cynicmusic.com pixelsphere.org)
+                        https://opengameart.org/content/battle-theme-a
+
+CC-BY (credit required):
+  08 Toxic Lab          'BlueBeat 01' Copyright 2007 ERH http://www.freesound.org/people/ERH/ ,
+                        License: http://creativecommons.org/licenses/by/3.0/
+                        https://opengameart.org/content/bluebeat-01-loop-cyberpunk-lab-music
+  10 Pirate Cove        "Loop Pirates Ahoy" - Little Robot Sound Factory (Morten Barfod Soegaard),
+                        loop by AntumDeluge - CC-BY 3.0
+                        https://opengameart.org/content/loop-pirates-ahoy
+  12 Mushroom Forest    "Mushroom Dance" - bart - CC-BY 3.0 (chosen from its licences)
+                        https://opengameart.org/content/mushroom-dance
+  13 Space Station      "SkyFire (Title Screen)" - MUSIC BY OBLIDIVM http://oblidivmmusic.blogspot.com.es/ - CC-BY 3.0
+                        https://opengameart.org/content/space-shooter-music
+  14 Desert Pyramid     "Sand Scars ~ Desert Race" - Mid-Air Machine - CC-BY 3.0
+                        https://opengameart.org/content/sand-scars-desert-race
+  18 Giant Beanstalk    "Fairy's Dance (8-bit)" - Drakiah (Piece of Pie Software) - CC-BY 4.0
+                        https://opengameart.org/content/fairys-dance-8-bit
+  19 Obsidian Gauntlet  "Dark Descent" - Matthew Pablo - CC-BY 3.0
+                        https://opengameart.org/content/dark-descent
+
+Licences: CC0 https://creativecommons.org/publicdomain/zero/1.0/
+          CC-BY 3.0 https://creativecommons.org/licenses/by/3.0/
+          CC-BY 4.0 https://creativecommons.org/licenses/by/4.0/
