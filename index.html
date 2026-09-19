@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stax - 13 games, one blocky world</title>
+<meta name="description" content="Stax is a free blocky game world for Windows: 13 games, an avatar shop, friends and more.">
+<meta property="og:title" content="Stax">
+<meta property="og:description" content="13 games. One blocky world. Free for Windows.">
+<meta property="og:image" content="https://acherchu.github.io/stax/img/share.png">
+<meta property="og:url" content="https://acherchu.github.io/stax/">
+<link rel="icon" href="img/icon.png">
+<style>
+  :root {
+    --bg: #111216;
+    --bg-2: #16181c;
+    --card: #1b1d21;
+    --card-2: #25282d;
+    --line: #2a2c31;
+    --text: #f7f7f8;
+    --muted: #a3a6ad;
+    --blue: #335fff;
+    --orange: #f0a020;
+    --green: #00b06f;
+    --green-hover: #00c97f;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+    line-height: 1.5;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+  /* Top bar */
+  header {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(22, 24, 28, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  header .wrap { display: flex; align-items: center; gap: 24px; height: 64px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .brand img.mark { height: 36px; width: auto; }
+  .brand img.word { height: 26px; width: auto; }
+  nav { display: flex; gap: 6px; margin-left: auto; }
+  nav a { text-decoration: none; color: var(--muted); font-weight: 600; padding: 8px 12px; border-radius: 8px; }
+  nav a:hover { background: var(--card-2); color: var(--text); }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    padding: 14px 26px; border-radius: 10px; font-weight: 700; font-size: 18px;
+    text-decoration: none; border: 0; cursor: pointer;
+  }
+  .btn-play { background: var(--green); color: #fff; }
+  .btn-play:hover { background: var(--green-hover); }
+  .btn-ghost { background: var(--card-2); color: var(--text); border: 1px solid #34373d; }
+  .btn-ghost:hover { background: #2e3137; }
+  .btn svg { width: 22px; height: 22px; }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(180deg, #1a1f3d 0%, var(--bg) 100%);
+    padding: 64px 0 56px;
+  }
+  .hero .wrap { display: grid; grid-template-columns: 1fr 1.25fr; gap: 48px; align-items: center; }
+  .hero .logo { height: 140px; width: auto; margin-bottom: 20px; }
+  .hero h1 { font-size: 44px; line-height: 1.1; margin: 0 0 14px; font-weight: 800; }
+  .hero p.lead { font-size: 19px; color: var(--muted); margin: 0 0 28px; max-width: 34em; }
+  .hero .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .hero .small { color: var(--muted); font-size: 14px; margin-top: 12px; }
+  .shot-frame {
+    border-radius: 14px; overflow: hidden; border: 1px solid var(--line);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+
+  section { padding: 64px 0; }
+  section.alt { background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  h2 { font-size: 32px; margin: 0 0 8px; }
+  .sub { color: var(--muted); margin: 0 0 32px; font-size: 17px; }
+
+  /* Games */
+  .games { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+  .game { background: var(--card); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+  .game img { aspect-ratio: 16 / 9; object-fit: cover; width: 100%; }
+  .game .body { padding: 14px 16px 16px; }
+  .game h3 { margin: 0 0 4px; font-size: 18px; }
+  .game p { margin: 0; color: var(--muted); font-size: 15px; }
+
+  /* Features */
+  .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .feature img { border-radius: 12px; border: 1px solid var(--line); margin-bottom: 14px; aspect-ratio: 16 / 10; object-fit: cover; object-position: top left; width: 100%; }
+  .feature h3 { margin: 0 0 6px; font-size: 20px; }
+  .feature p { margin: 0; color: var(--muted); }
+
+  /* Download */
+  .download { text-align: center; }
+  .download .box {
+    background: var(--card); border: 1px solid var(--line); border-radius: 18px;
+    padding: 40px 24px; max-width: 760px; margin: 0 auto;
+  }
+  .steps { text-align: left; max-width: 520px; margin: 28px auto 0; padding: 0; list-style: none; counter-reset: step; }
+  .steps li { counter-increment: step; display: flex; gap: 14px; margin-bottom: 14px; color: var(--muted); }
+  .steps li::before {
+    content: counter(step); flex: 0 0 30px; height: 30px; border-radius: 50%;
+    background: var(--blue); color: #fff; font-weight: 700;
+    display: grid; place-items: center;
+  }
+  .steps b { color: var(--text); }
+  .note { font-size: 14px; color: var(--muted); margin-top: 20px; }
+
+  footer { padding: 32px 0 48px; color: var(--muted); font-size: 14px; text-align: center; }
+  footer img { height: 34px; width: auto; margin: 0 auto 10px; }
+
+  @media (max-width: 860px) {
+    .hero .wrap { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 34px; }
+    .features { grid-template-columns: 1fr; }
+    nav a.hide-sm { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Stax home">
+      <img class="mark" src="img/stax_mark.png" alt="">
+      <img class="word" src="img/stax_word.png" alt="Stax">
+    </a>
+    <nav>
+      <a href="#games">Games</a>
+      <a href="#features" class="hide-sm">Features</a>
+      <a href="#download">Download</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <img class="logo" src="img/stax_full.png" alt="Stax logo">
+        <h1>13 games. One blocky world.</h1>
+        <p class="lead">Make an account, dress up your avatar, and jump into obbies, tycoons, races, pets, zombies and more. Earn coins in every game and spend them in the Marketplace.</p>
+        <div class="actions">
+          <a class="btn btn-play" href="https://github.com/Acherchu/stax/releases/latest/download/Stax-Windows.zip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg>
+            Download for Windows
+          </a>
+          <a class="btn btn-ghost" href="#games">See the games</a>
+        </div>
+        <p class="small">Free &middot; Windows 10 / 11 (64-bit) &middot; 37 MB</p>
+      </div>
+      <div class="shot-frame"><img src="img/home.jpg" alt="The Stax home page"></div>
+    </div>
+  </div>
+
+  <section id="games">
+    <div class="wrap">
+      <h2>The games</h2>
+      <p class="sub">Every one of them is playable. Your avatar and outfit come with you into all of them.</p>
+      <div class="games">
+        <div class="game"><img src="img/star_dash.jpg" alt="Star Dash" loading="lazy"><div class="body"><h3>Star Dash</h3><p>Grab the gems and jump over the sliding blocks. Three lives!</p></div></div>
+        <div class="game"><img src="img/tower_tumbles.jpg" alt="Tower of Tumbles Obby" loading="lazy"><div class="body"><h3>Tower of Tumbles Obby</h3><p>Eight stages of jumps, kill bricks and spinners. Can you reach the top?</p></div></div>
+        <div class="game"><img src="img/lava_escape.jpg" alt="Lava Escape" loading="lazy"><div class="body"><h3>Lava Escape</h3><p>The lava is rising! Climb the tower before it catches you.</p></div></div>
+        <div class="game"><img src="img/pet_paradise.jpg" alt="Pet Paradise Simulator" loading="lazy"><div class="body"><h3>Pet Paradise Simulator</h3><p>Collect orbs, hatch eggs and build a team of pets that follow you.</p></div></div>
+        <div class="game"><img src="img/dragon_academy.jpg" alt="Dragon Rider Academy" loading="lazy"><div class="body"><h3>Dragon Rider Academy</h3><p>Fly a dragon through 20 rings in the sky as fast as you can.</p></div></div>
+        <div class="game"><img src="img/pizza_tycoon.jpg" alt="Mega Pizza Tycoon" loading="lazy"><div class="body"><h3>Mega Pizza Tycoon</h3><p>Build the biggest pizza restaurant around, one dropper at a time.</p></div></div>
+        <div class="game"><img src="img/treehouse.jpg" alt="Treehouse Hangout" loading="lazy"><div class="body"><h3>Treehouse Hangout</h3><p>Hang out in a giant tree and hunt for all 12 golden acorns.</p></div></div>
+        <div class="game"><img src="img/zombie_night.jpg" alt="Zombie Night Survival" loading="lazy"><div class="body"><h3>Zombie Night Survival</h3><p>Grab your sword and survive wave after wave of zombies.</p></div></div>
+        <div class="game"><img src="img/blocky_kart.jpg" alt="Blocky Kart Racing" loading="lazy"><div class="body"><h3>Blocky Kart Racing</h3><p>Race three computer drivers over three laps. First place pays best!</p></div></div>
+        <div class="game"><img src="img/fishing_frenzy.jpg" alt="Fishing Frenzy" loading="lazy"><div class="body"><h3>Fishing Frenzy</h3><p>Cast off the dock and catch every fish, even the Golden Koi.</p></div></div>
+        <div class="game"><img src="img/space_tycoon.jpg" alt="Space Station Tycoon" loading="lazy"><div class="body"><h3>Space Station Tycoon</h3><p>Build a space station in low gravity, then launch a rocket.</p></div></div>
+        <div class="game"><img src="img/robot_arena.jpg" alt="Robot Arena" loading="lazy"><div class="body"><h3>Robot Arena</h3><p>Blast waves of robots before their lasers blast you.</p></div></div>
+        <div class="game"><img src="img/haunted_hotel.jpg" alt="Haunted Hotel" loading="lazy"><div class="body"><h3>Haunted Hotel</h3><p>Find 5 keys in a dark hotel while a ghost hunts you. Then run!</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="alt">
+    <div class="wrap">
+      <h2>More than games</h2>
+      <p class="sub">A whole place to hang out.</p>
+      <div class="features">
+        <div class="feature"><img src="img/marketplace.jpg" alt="The Marketplace" loading="lazy"><h3>Marketplace</h3><p>Spend the coins you earn on shirts, pants, faces, hats, capes, wings and more.</p></div>
+        <div class="feature"><img src="img/avatar.jpg" alt="The Avatar page" loading="lazy"><h3>Your avatar</h3><p>Pick your colours and outfit. You look the same in every game.</p></div>
+        <div class="feature"><img src="img/game_page.jpg" alt="A game page with likes" loading="lazy"><h3>Friends and ratings</h3><p>Add friends, and give games a thumbs up or down after you play them.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="download" class="download">
+    <div class="wrap">
+      <div class="box">
+        <h2>Get Stax</h2>
+        <p class="sub">Free for Windows 10 and 11 (64-bit).</p>
+        <a class="btn btn-play" href="https://github.com/Acherchu/stax/releases/latest/download/Stax-Windows.zip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg>
+          Download Stax (37 MB)
+        </a>
+        <ol class="steps">
+          <li><span><b>Download</b> the zip with the green button.</span></li>
+          <li><span><b>Unzip it</b>: right-click the zip, then "Extract All".</span></li>
+          <li><span><b>Double-click Stax.exe</b> and make an account on the Sign Up screen.</span></li>
+        </ol>
+        <p class="note">Windows might say "Windows protected your PC" the first time, because Stax is a new game. Click <b>More info</b>, then <b>Run anyway</b>.<br>Your account is saved on your own computer.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <img src="img/stax_mark.png" alt="">
+  Stax &middot; made by Archer
+</footer>
+
+</body>
+</html>
