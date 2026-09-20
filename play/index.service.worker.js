@@ -21,7 +21,9 @@ const CACHEABLE_FILES = ["index.wasm","index.pck"];
 const FULL_CACHE = CACHED_FILES.concat(CACHEABLE_FILES);
 
 self.addEventListener('install', (event) => {
-	event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(CACHED_FILES)));
+	// Stax: take over as soon as the new files are cached, instead of sitting and waiting for every
+	// window of the old version to be closed (that left phones running last week's Stax).
+	event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(CACHED_FILES)).then(() => self.skipWaiting()));
 });
 
 self.addEventListener('activate', (event) => {
@@ -33,6 +35,21 @@ self.addEventListener('activate', (event) => {
 	).then(function () {
 		// Enable navigation preload if available.
 		return ('navigationPreload' in self.registration) ? self.registration.navigationPreload.enable() : Promise.resolve();
+	}).then(function () {
+		// Stax: take charge of the window that's open and load it again, so the new version is there
+		// now rather than on some later launch.
+		return self.clients.claim();
+	}).then(function () {
+		return self.clients.matchAll({ type: 'window' });
+	}).then(function (all) {
+		all.forEach(function (c) {
+			try {
+				const p = c.navigate(c.url);
+				if (p && p.catch) {
+					p.catch(function () {});
+				}
+			} catch (e) {}
+		});
 	}));
 });
 
