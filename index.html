@@ -149,16 +149,20 @@
         <h1>13 games. One blocky world.</h1>
         <p class="lead">Make an account, dress up your avatar, and jump into obbies, tycoons, races, pets, zombies and more. Add your friends with a friend code and play together online. Earn coins in every game and spend them in the Marketplace.</p>
         <div class="actions">
-          <a class="btn btn-play" href="https://github.com/Acherchu/stax/releases/download/v2.1.4/Stax-2.1.4-Windows.zip" data-dl>
+          <a class="btn btn-play" href="https://github.com/Acherchu/stax/releases/download/v2.1.5/Stax-2.1.5-Windows.zip" data-dl>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg>
             Download for Windows
+          </a>
+          <a class="btn btn-ghost" href="https://github.com/Acherchu/stax/releases/download/v2.1.5/Stax-2.1.5-Android.apk" data-apk>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2.5"/><path d="M10 18h4"/></svg>
+            Android app
           </a>
           <a class="btn btn-ghost" href="play/" id="play-web">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg>
             Play in your browser
           </a>
         </div>
-        <p class="small">Free &middot; Windows 10 / 11 (64-bit) &middot; 145 MB &middot; or play in your browser, on phones too &middot; <span data-ver>Version 2.1.4</span></p>
+        <p class="small">Free &middot; Windows 10 / 11 (64-bit) &middot; 145 MB &middot; or play in your browser, on phones too &middot; <span data-ver>Version 2.1.5</span></p>
       </div>
       <div class="shot-frame"><img src="img/home.jpg" alt="The Stax home page"></div>
     </div>
@@ -202,17 +206,20 @@
     <div class="wrap">
       <div class="box">
         <h2>Get Stax</h2>
-        <p class="sub">Free for Windows 10 and 11 (64-bit). <span data-ver>Version 2.1.4</span></p>
-        <a class="btn btn-play" href="https://github.com/Acherchu/stax/releases/download/v2.1.4/Stax-2.1.4-Windows.zip" data-dl>
+        <p class="sub">Free for Windows 10 and 11 (64-bit). <span data-ver>Version 2.1.5</span></p>
+        <a class="btn btn-play" href="https://github.com/Acherchu/stax/releases/download/v2.1.5/Stax-2.1.5-Windows.zip" data-dl>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg>
-          Download Stax <span data-ver-short>2.1.4</span> (145 MB)
+          Download Stax <span data-ver-short>2.1.5</span> (145 MB)
         </a>
         <ol class="steps">
           <li><span><b>Download</b> the zip with the green button.</span></li>
           <li><span><b>Unzip it</b>: right-click the zip, then "Extract All".</span></li>
           <li><span><b>Double-click Stax.exe</b> and make an account on the Sign Up screen.</span></li>
         </ol>
-        <p class="sub" style="margin-top:22px">On a phone or tablet? No download needed:</p>
+        <p class="sub" style="margin-top:22px">On an Android phone or tablet, install the app:</p>
+        <a class="btn btn-ghost" href="https://github.com/Acherchu/stax/releases/download/v2.1.5/Stax-2.1.5-Android.apk" data-apk>Download Stax for Android (159 MB)</a>
+        <p class="note">You can download it on a computer and copy it to the phone, or download it on the phone itself. Open the file on the phone and tap Install - Android will ask you to allow installing apps from your browser or files app the first time, because Stax isn't in the Play Store.</p>
+        <p class="sub" style="margin-top:22px">Any phone or tablet, nothing to install:</p>
         <a class="btn btn-ghost" href="play/">Play Stax in your browser</a>
         <p class="note">Turn your phone sideways. Move with the stick in the bottom-left, jump with the button on the right, drag the screen to look around. Your account is saved in that browser.</p>
         <p class="note">Windows might say "Windows protected your PC" the first time, because Stax is a new game. Click <b>More info</b>, then <b>Run anyway</b>.<br>Your account is saved on your own computer.</p>
@@ -243,6 +250,8 @@
         || (rel.assets || []).find(a => a.name === "Stax-Windows.zip");
       const ver = String(rel.tag_name || "").replace(/^v/, "");
       if (asset) document.querySelectorAll("[data-dl]").forEach(a => a.href = asset.browser_download_url);
+      const apk = (rel.assets || []).find(a => /^Stax-[\d.]+-Android\.apk$/.test(a.name));
+      if (apk) document.querySelectorAll("[data-apk]").forEach(a => a.href = apk.browser_download_url);
       if (ver) {
         document.querySelectorAll("[data-ver]").forEach(s => s.textContent = "Version " + ver);
         document.querySelectorAll("[data-ver-short]").forEach(s => s.textContent = ver);
