@@ -93,6 +93,41 @@ body {
 		<link id="-gd-engine-icon" rel="icon" type="image/png" href="index.icon.png" />
 <link rel="apple-touch-icon" href="index.apple-touch-icon.png"/>
 <link rel="manifest" href="index.manifest.json">
+<script>
+(function () {
+  // Phones were silent. Two reasons, both handled here.
+  // 1. An iPhone mutes Web Audio whenever the little side switch is on silent - unless the page
+  //    says its sound is "playback" (Safari 16.4+), like a music app.
+  try {
+    if (navigator.audioSession) { navigator.audioSession.type = 'playback'; }
+  } catch (e) {}
+  // 2. A browser only lets sound start after a real tap. Keep hold of the audio Godot sets up and
+  //    wake it on the first touch (and whenever Stax comes back to the front).
+  try {
+    var AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) { return; }
+    function Kept(opts) {
+      var ctx = new AC(opts);
+      window.staxAudio = ctx;
+      return ctx;
+    }
+    Kept.prototype = AC.prototype;
+    window.AudioContext = Kept;
+    if (window.webkitAudioContext) { window.webkitAudioContext = Kept; }
+    var wake = function () {
+      try {
+        if (window.staxAudio && window.staxAudio.state !== 'running') { window.staxAudio.resume(); }
+      } catch (e) {}
+    };
+    ['touchstart', 'touchend', 'pointerdown', 'mousedown', 'click', 'keydown'].forEach(function (t) {
+      window.addEventListener(t, wake, true);
+    });
+    document.addEventListener('visibilitychange', function () {
+      if (!document.hidden) { wake(); }
+    });
+  } catch (e) {}
+})();
+</script>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -183,7 +218,7 @@ body > input, body > textarea { position: fixed !important; top: 0 !important; l
 
 		<script src="index.js"></script>
 		<script>
-const GODOT_CONFIG = {"args":[],"canvasResizePolicy":0,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":true,"fileSizes":{"index.pck":986884,"index.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4,"serviceWorker":"index.service.worker.js"};
+const GODOT_CONFIG = {"args":[],"canvasResizePolicy":0,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":true,"fileSizes":{"index.pck":987684,"index.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4,"serviceWorker":"index.service.worker.js"};
 const GODOT_THREADS_ENABLED = false;
 const engine = new Engine(GODOT_CONFIG);
 
