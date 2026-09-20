@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get the newest Stax</title>
+<link rel="icon" href="../img/icon.png">
+<style>
+  body {
+    margin: 0; min-height: 100vh; display: grid; place-items: center;
+    background: #111216; color: #f7f7f8;
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+    line-height: 1.5; padding: 24px;
+  }
+  .box { max-width: 420px; text-align: center; }
+  img { height: 64px; width: auto; margin: 0 auto 18px; }
+  h1 { font-size: 26px; margin: 0 0 10px; }
+  p { color: #a3a6ad; margin: 0 0 18px; }
+  .state { font-weight: 700; color: #f7f7f8; min-height: 1.6em; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 14px 26px; border-radius: 10px; font-weight: 700; font-size: 18px;
+    text-decoration: none; background: #00b06f; color: #fff; border: 0; cursor: pointer;
+  }
+  .small { font-size: 13px; margin-top: 22px; }
+</style>
+</head>
+<body>
+  <div class="box">
+    <img src="../img/stax_mark.png" alt="">
+    <h1>Getting the newest Stax</h1>
+    <p class="state" id="state">Clearing the old copy...</p>
+    <a class="btn" id="go" href="../play/">Open Stax</a>
+    <p class="small">This throws away the copy of Stax your phone or browser had saved and fetches
+    the newest one. Your account isn't touched - it lives on the Stax server.<br><br>
+    If you opened this from a Stax icon on your home screen and it still looks old, hold the icon,
+    remove it, then add it again from this page's <b>Open Stax</b> button.</p>
+  </div>
+<script>
+(function () {
+  var state = document.getElementById('state');
+  var jobs = [];
+  try {
+    if (window.caches) {
+      jobs.push(caches.keys().then(function (ks) {
+        return Promise.all(ks.map(function (k) { return caches.delete(k); }));
+      }));
+    }
+  } catch (e) {}
+  try {
+    if (navigator.serviceWorker) {
+      jobs.push(navigator.serviceWorker.getRegistrations().then(function (rs) {
+        return Promise.all(rs.map(function (r) { return r.unregister(); }));
+      }));
+    }
+  } catch (e) {}
+  var done = function () {
+    state.textContent = 'Done! Opening Stax...';
+    setTimeout(function () { location.href = '../play/?fresh=' + Date.now(); }, 1200);
+  };
+  Promise.all(jobs).then(done, done);
+  setTimeout(done, 5000);
+})();
+</script>
+</body>
+</html>
