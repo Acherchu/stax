@@ -1,0 +1,14 @@
+STAR DASH - music
+=================
+Real music by real composers, downloaded from OpenGameArt.org on 2026-09-22 with Archer's OK and
+used unchanged. Every track here is CC0 (public domain): no attribution is required, but the game
+shows the title and composer when each one starts anyway, because they earned it.
+
+boss_battle_theme.mp3    "Boss Battle Theme" by CleytonKauffman (CleytonRX)  - CC0
+                         https://opengameart.org/content/boss-battle-theme
+tower_defense_theme.mp3  "Tower Defense Theme" by DST                        - CC0
+                         https://opengameart.org/content/tower-defense-theme
+battle_theme_a.mp3       "Battle Theme A" by cynicmusic                      - CC0
+                         https://opengameart.org/content/battle-theme-a
+osare_unrest.ogg         "Osare (Unrest Theme)" by Augmentality (Brandon Morris) - CC0
+                         https://opengameart.org/content/osare-unrest-theme

@@ -1,0 +1,17 @@
+TOWER OF TUMBLES - music
+========================
+Bouncy platformer music, the sort an obby wants (Archer asked for "more roblox style" after the
+first, calmer set). Real music by real composers, downloaded from OpenGameArt.org on 2026-09-22
+with Archer's OK and used unchanged. Every track here is CC0 (public domain): no attribution is
+required, but the game shows the title and composer when each one starts anyway.
+
+green_hills.mp3        "Green Hills" by Igor Gundarev              - CC0
+                       https://opengameart.org/content/green-hills
+summer_park.ogg        "Summer Park - 8bit tune (loop)" by Scribe  - CC0
+                       https://opengameart.org/content/summer-park-8bit-tune-loop
+flowerbed_fields.ogg   "Flowerbed Fields [Loop]" by Zane Little Music - CC0
+                       https://opengameart.org/content/flowerbed-fields-loop
+rhythm_factory.mp3     "Rhythm Factory" by Zane Little Music       - CC0
+                       https://opengameart.org/content/rhythm-factory
+happy_adventure.mp3    "Happy Adventure (Loop)" by TinyWorlds      - CC0
+                       https://opengameart.org/content/happy-adventure-loop

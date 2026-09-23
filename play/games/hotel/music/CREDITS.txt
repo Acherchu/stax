@@ -1,0 +1,14 @@
+HAUNTED HOTEL - music
+=====================
+Real music by real composers, downloaded from OpenGameArt.org on 2026-09-22 with Archer's OK and
+used unchanged. Every track here is CC0 (public domain): no attribution is required, but the game
+shows the title and composer when each one starts anyway, because they earned it.
+
+night_of_the_streets.mp3    "Night of the Streets [Horror/Suspense]" by nene   - CC0
+                            https://opengameart.org/content/night-of-the-streets-horrorsuspense
+unsolved_investigation.ogg  "Unsolved Investigation" by isaiah658              - CC0
+                            https://opengameart.org/content/unsolved-investigation
+creepy.ogg                  "Creepy" by TokyoGeisha                            - CC0
+                            https://opengameart.org/content/creepy
+ps2_horror_ambient.mp3      "PS2 horror / mystery ambient theme" by Tarush Singhal - CC0
+                            https://opengameart.org/content/ps2-horror-mystery-ambient-theme
