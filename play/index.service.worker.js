@@ -4,7 +4,7 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = '1791412720|7176191';
+const CACHE_VERSION = '1791414080|6546473';
 /** @type {string} */
 const CACHE_PREFIX = 'Stax-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
