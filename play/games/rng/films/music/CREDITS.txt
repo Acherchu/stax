@@ -1,0 +1,17 @@
+Music for Aura Rift's films (games/rng/films/). All CC0 (public domain) from OpenGameArt.org,
+downloaded 2026-10-04 with Archer's OK; each licence was read on its page first (CC0 only, nothing
+AI-made). CC0 needs no credit, but here they are anyway. Used unchanged; the films start each one
+part-way through ("from" in the film script) so its big moment lands on the film's burst.
+
+singularity.mp3         "Singularity" (action version) - vitalezzz - https://opengameart.org/content/singularity-0
+genesis.mp3             "Rise Of The Early Dawn" - antonioraymond71 - https://opengameart.org/content/rise-of-the-early-dawn
+oblivion.ogg            "A lurking evil (horror ambience)" - congusbongus - https://opengameart.org/content/a-lurking-evil-horror-ambience
+supernova.ogg           "Eclipse Legion" - vitalezzz - https://opengameart.org/content/eclipse-legion
+paradox.ogg             "Clocktower / Clockwise / Clockwork / Time Passing / Loop" - KiluaBoy - https://opengameart.org/content/clocktower-clockwise-clockwork-time-passing-loop
+worldender.ogg          "War Theme" (ver 2) - Spring Spring - https://opengameart.org/content/war-theme
+cosmos.ogg              "Our expanse" (with tail) - Bobjt - https://opengameart.org/content/our-expanse
+absolute.ogg            "Epic transformation [1:24]" - Dizzy Crow - https://opengameart.org/content/epic-transformation-124
+kernelpanic_glitch.mp3  "Robots Taking Over" - Deva - https://opengameart.org/content/robots-taking-over
+kernelpanic_escape.ogg  "Android With Epilepsy" - zq - https://opengameart.org/content/android-with-epilepsy
+shop.mp3                "Magic Town" - controllerhead - https://opengameart.org/content/magic-town
+machine_city.mp3        "Machine City" - Tarush Singhal - https://opengameart.org/content/machine-city  (the Glitch biome's song, games/rng/biome_fx.gd; 2:50, -12.1 LUFS)
